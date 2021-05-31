@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>THE LOST</title>
+        <link rel="icon" type="image/png" href="img/favicon.png"/>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="prism.css">
+    </head>
+    <body>
+        <header id="navbar" class="hide">
+            <ul>
+                <li><a href="#home"><img src="img/white-logo.png" alt="Home" height="30px"></a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#robotics">Robótica na TI</a></li>
+                <li><a href="#line-follower">Seguidor de Linha</a></li>
+            </ul>
+        </header>
+        <main>
+            <section id="home">
+                <div class="align-center logo">
+                    <h2>The</h2>
+                    <h1>Lost</h1>
+                </div>                
+            </section>
+
+            <section id="about">
+                <h1>Sobre</h1>
+                <div class="flex-content">                    
+                    <img src="img/white-logo.png" alt="Palmeira, logo do grupo The Lost" height="200px" width="200px">
+                    <p>
+                        O nome “The Lost” inicialmente veio da incerteza de um nome impactante e marcante, até que veio a ideia 
+                        do nome posto, que no começo gerou dúvidas, mas com o passar do tempo vimos que foi a escolha certa, esse 
+                        título referencia um famoso programa de televisão de Jeffrey J. Abrams e também representou a incerteza do 
+                        grupo para escolher um nome, agora carregamos “The Lost” para nos lembrar de onde viemos e saber para onde vamos.
+                    </p>                              
+                </div>                
+            </section>
+
+            <section id="robotics">
+                <h1>Robótica na Tecnologia da Informação</h1>
+                <p>
+                    Entender a importância da robótica na tecnologia da informação e na carreira 
+                </p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KOW5DuBmMf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>                
+            </section>
+
+            <section id="line-follower">
+                <h1>seguidor de linha</h1>
+                <p>
+                    O robô seguidor de linha é basicamente um robô pré-programado cuja função é detectar um caminho na superfície, lido por um
+                    sensor e se movendo ao longo desse caminho marcado no chão por uma linha preta sobre uma superfície branca ou o inverso. 
+                    Em 2016 a equipe “wickedbotz” (equipe de robôs católica de Santa Catarina) participou da competição internacional de robótica
+                    disputando com 14 universidades com 23 robôs, a equipe levou 7 robôs para diversas categorias uma delas sendo robô seguidor 
+                    de linha, ganhando bronze na competição.
+                </p>
+                <p>
+                    Com a chegada da pandemia em nosso país no final de fevereiro de 2020, Começamos a usar mais a tecnologia no nosso dia a dia, 
+                    começamos usar sites que não eram tão usados para o estudo para não deixar o aprendizado de lado e começamos a perceber como a 
+                    tecnologia está muito evoluída e que usamos ela no nosso cotidiano. Usando um site chamado tinkercad fizemos um projeto robô 
+                    seguidor de linha que mostraremos a seguir:
+                </p>
+                <img class="content-img" src="img/line-follower.png" alt="Seguidor de linha completo">                
+                <div class="components">
+                    <button onclick="showComponent(-1)">&#10094;</button>
+                    <div class="d-none component">                        
+                        <div class="component-img">
+                            <img src="img/arduino-uno-r3.png" alt="Arduino Uno R3">
+                        </div>
+                        <div class="component-text">
+                            <h3>Arduino UNO R3</h3>
+                            <p>
+                                Plataforma de prototipagem que utiliza linguagem C, para executar funções de forma automatizada.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-none component">
+                        <div class="component-img">
+                            <img src="img/cc-motor.png" alt="Motor CC">
+                        </div>                        
+                        <div class="component-text">
+                            <h3>Motor CC</h3>
+                            <p>
+                                O motor é um dispositivo desenvolvido com a finalidade de converter energia elétrica em energia mecânica, de modo que ela possa ser
+                                utilizada para a operação de diversos equipamentos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-none component">
+                        <div class="component-img">
+                            <img src="img/mini-breadboard.png" alt="Placa de ensaio mini">
+                        </div>                        
+                        <div class="component-text">
+                            <h3>Placa de Ensaio Mini</h3>
+                            <p>
+                                Plataforma para a construção de circuitos eletrônicos. Esses dispositivos geralmente são usados ​​na prototipagem e incluem vários
+                                furos nos quais componentes eletrônicos, como circuitos integrados (ICs), resistores e fios, podem ser encaixados. Alguns dos 
+                                orifícios são conectados a outros por tiras de cobre, e é assim que os componentes eletrônicos são capazes de formar circuitos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" component">
+                        <div class="component-img">
+                            <img src="img/battery.png" alt="Bateria 9V">
+                        </div>                        
+                        <div class="component-text">
+                            <h3>Bateria 9V</h3>
+                            <p>
+                                Serve para dar partida no robô, proporcionando energia aos componentes eletrônicos ativos.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-none component">
+                        <div class="component-img">
+                            <img src="img/h-bridge-motor-driver.png" alt="Acionador de motor de ponte H">
+                        </div>                        
+                        <div class="component-text">
+                            <h3>Acionador de Motor de Ponte H</h3>
+                            <p>
+                                Circuito integrado que contém duas pontes H completas. Com ele, é possível controlar dois motores DC bidirecionalmente, quatro
+                                solenóides ou um motor de passo. A versão com a letra “D” vem com diodos internos de proteção.Suas aplicações incluem o controle
+                                de cargas indutivas, como solenóides, relés, motores de passo e DC bipolares, assim como outras cargas de alta corrente/tensão.
+                                Suporta tensões de 4,5V até 36V, e é alimentado com tensão de 5V.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-none component">
+                        <div class="component-img">
+                            <img src="img/photoresistor.png" alt="Fotorresistor">
+                        </div>                        
+                        <div class="component-text">
+                            <h3>Fotorresistor</h3>
+                            <p>
+                                Resistor que varia sua resistência conforme a luz que incide sobre o seu corpo, funcionando como um sensor de iluminação. 
+                                O resistor dependente de luz é muito usado em acendimento automático de lâmpadas, como em fotocélulas, ou em regulagem 
+                                automática de brilho de telas.
+                            </p>
+                        </div>
+                    </div>                    
+                    <div class="d-none component">
+                        <div class="component-img">
+                            <img src="img/resistor.png" alt="Resistor">
+                        </div>                        
+                        <div class="component-text">
+                            <h3>Resistor</h3>
+                            <p>
+                                Componentes eletrônicos cuja principal função é limitar o fluxo de cargas elétricas por meio da conversão da energia 
+                                elétrica em energia térmica. Os resistores são geralmente feitos a partir de materiais dielétricos, de grande resistência
+                                elétrica. A grande resistência elétrica dos resistores torna esses componentes capazes de reduzir a passagem da corrente elétrica.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-none component">
+                        <div class="component-img">
+                            <img src="img/slide-switch.png" alt="Interruptor deslizante">
+                        </div>                        
+                        <div class="component-text">
+                            <h3>Interruptor Deslizante</h3>
+                            <p>
+                                Liga e desliga o aparelho eletrônico.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-none component">
+                        <div class="component-img">
+                            <img src="img/rgb-led.png" alt="Lâmpada de LED RGB">
+                        </div>                    
+                        <div class="component-text">
+                            <h3>Lâmpada de LED RGB</h3>
+                            <p>
+                                A lâmpada de LED RGB é constituída por três cores: vermelho, verde e azul. Alterando a intensidade e a mistura das cores, 
+                                cores diferentes das primárias são formadas.
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="showComponent(1)">&#10095;</button>
+                </div>
+                <h2>Codificação</h2>
+                <pre class="language-c code-snippet">
+                    <code>
+                        #define IN1 2
+                        #define IN2 4
+                        #define IN3 7
+                        #define IN4 5
+                        #define ENA 3
+                        #define ENB 6
+
+                        #define LEDR 9
+                        #define LEDB 10
+                        #define LEDG 11
+
+                        #define S1 A0
+                        #define S2 A1
+                        #define S3 A2
+                        #define S4 A3
+
+                        void setup() {
+
+                            pinMode(IN1,OUTPUT);
+                            pinMode(IN2,OUTPUT);
+                            pinMode(IN3,OUTPUT);
+                            pinMode(IN4,OUTPUT);
+                            pinMode(ENA,OUTPUT);
+                            pinMode(ENB,OUTPUT);
+                            analogWrite(ENA,255);
+                            analogWrite(ENB,255);
+                            
+                            pinMode(LEDR, OUTPUT);
+                            pinMode(LEDB, OUTPUT);
+                            pinMode(LEDG, OUTPUT);
+                            
+                            Serial.begin(9600);
+                        }
+
+                        void loop() {
+
+                            int s1, s2, s3, s4;
+                            
+                            s1=analogRead(S1);
+                            s2=analogRead(S2);
+                            s3=analogRead(S3);
+                            s4=analogRead(S4);
+                            
+                            int light = 500;
+                            
+                            Serial.print(s1);
+                            Serial.print(" ");
+                            Serial.print(s2);
+                            Serial.print(" ");
+                            Serial.print(s3);
+                            Serial.print(" ");
+                            Serial.print(s4);
+                            Serial.print(" ");
+                        
+                            if (s1 < light && s2 > light && s3 > light && s4 < light) {
+
+                                Serial.println("FRONT");    
+                                digitalWrite(LEDR, LOW);
+                                digitalWrite(LEDG, HIGH);
+                                digitalWrite(LEDB, LOW);
+                                
+                                digitalWrite(IN1,HIGH);
+                                digitalWrite(IN2,LOW);
+                                digitalWrite(IN3,LOW);
+                                digitalWrite(IN4,HIGH);
+
+                            } else if (s1 > light && s2 < light && s3 < light && s4 < light) {
+
+                                Serial.println("RIGHT");        
+                                digitalWrite(LEDR, HIGH);
+                                digitalWrite(LEDG, LOW);
+                                digitalWrite(LEDB, LOW);
+                                
+                                digitalWrite(IN1,LOW);
+                                digitalWrite(IN2,HIGH);
+                                digitalWrite(IN3,LOW);
+                                digitalWrite(IN4,HIGH);
+
+                            } else if (s1 < light && s2 < light && s3 < light && s4 > light) {
+
+                                Serial.println("LEFT");
+                                digitalWrite(LEDR, HIGH);
+                                digitalWrite(LEDG, LOW);
+                                digitalWrite(LEDB, LOW);
+                                
+                                digitalWrite(IN1,HIGH);
+                                digitalWrite(IN2,LOW);
+                                digitalWrite(IN3,HIGH);
+                                digitalWrite(IN4,LOW);
+
+                            } else {
+                                Serial.println("STOP");
+                                digitalWrite(LEDR, LOW);
+                                digitalWrite(LEDG, LOW);
+                                digitalWrite(LEDB, HIGH);
+
+                                digitalWrite(IN1,LOW);
+                                digitalWrite(IN2,LOW);
+                                digitalWrite(IN3,LOW);
+                                digitalWrite(IN4,LOW);
+                            }
+                        }
+                    </code>
+                  </pre>
+            </section>
+        </main>
+        <!-- <footer>
+            <h1>rodape</h1>
+        </footer>         -->
+        <script src="prism.js"></script>
+    </body>
+
+    <script>        
+        let componentIndex = 1;
+        const components = document.getElementsByClassName("component");                
+
+        function showComponent(n) {
+            let index = componentIndex += n;
+
+            if (index > components.length) { 
+                componentIndex = 1 
+            }            
+            if (index < 1) {
+                componentIndex = components.length 
+            }
+
+            for (var i = 0; i < components.length; i++) {
+                components[i].style.display = "none";
+            }
+
+            components[componentIndex - 1].style.display = "flex";
+        }
+
+        window.onscroll = function() {            
+            if (window.pageYOffset > 600) {
+                document.getElementById("navbar").classList.remove('hide');
+            } else {
+                document.getElementById("navbar").classList.add('hide');
+            }
+        }
+
+        showComponent(0);
+    </script>
+</html>

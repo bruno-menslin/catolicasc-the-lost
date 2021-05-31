@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=IBM+Plex+Mono:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;    
+}
+
+html,
+body,
+main {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #000;
+    font-family: 'IBM Plex Mono', 'Dosis', 'monospace';
+    color: rgba(255, 255, 255, 0.75);
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body main {
+    width: 80vw;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 4rem 0;
+}
+section p {
+    margin: 1rem 0;
+    text-align: justify;
+}
+section h2 {
+    margin-top: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.align-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#home {
+    height: 100%;
+    padding: 0;
+    margin-bottom: -4rem;
+}
+
+.logo {
+    font-family: 'Dosis', 'monospace';    
+    color: transparent;    
+    letter-spacing: 6rem;    
+    text-align: center;
+    animation: fadein 5s linear 1 normal forwards;
+}
+.logo h2,
+.logo h1 {
+    margin-right: -6rem;
+    text-shadow: 0 0 1rem #fff;
+    animation: logo 10s linear 1 normal forwards;
+}
+.logo h2 {
+    font-size: 1.5rem;            
+}
+.logo h1 {
+    font-size: 6rem;    
+}
+
+#navbar {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    background: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.001) 100%);
+
+    overflow: hidden;
+    z-index: 1;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+#navbar.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+#navbar .align-center {
+    width: 100%;
+}
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-transform: uppercase;
+}
+
+.flex-content {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+    align-items: center;
+}
+.flex-content p {
+    margin: 0;
+}
+.content-img {
+    width: 100%;
+}
+
+.video-container { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden; 
+}
+.video-container iframe { 
+    position: 
+    absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.components {
+    display: flex;    
+    align-items: center;
+}
+.components button {
+    flex: 0 0 50px;
+    height: 50px;
+    
+    cursor: pointer;
+    border-radius: 100%;
+
+    color: #fff;
+    background-color: #000;
+    border: 2px solid #fff;
+}
+.component {    
+    margin: 0 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+.component-img {
+    flex: 0 0 300px;
+}
+.component-img img {
+    width: 100%;
+    height: 300px;
+}
+.d-none {
+    display: none;
+}
+
+.code-snippet {
+    background-color: #0e0e0e !important;
+}
+
+@keyframes fadein {
+    from {
+       opacity: 0;
+    }
+    to {
+        opacity: 1;        
+    }
+}
+
+@keyframes logo {
+    from {
+        text-shadow: 0 0 1rem #fff;
+    }
+    to {
+        text-shadow: none;
+        color: rgba(255, 255, 255, 0.748);
+    }
+}
+
+@media (max-width: 700px) {
+    .flex-content {
+        flex-direction: column-reverse;
+    }
+}
