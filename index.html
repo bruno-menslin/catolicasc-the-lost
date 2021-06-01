@@ -182,51 +182,60 @@
                 <h2>Codificação</h2>
                 <pre class="language-c code-snippet">
                     <code>
-                        #define IN1 2
+                        //definição dos nomes dos valores constantes
+                        #define IN1 2 //motor
                         #define IN2 4
                         #define IN3 7
                         #define IN4 5
                         #define ENA 3
                         #define ENB 6
 
-                        #define LEDR 9
+                        #define LEDR 9 //LED RGB
                         #define LEDB 10
                         #define LEDG 11
 
-                        #define S1 A0
-                        #define S2 A1
-                        #define S3 A2
-                        #define S4 A3
+                        #define S1 A3 //sensores
+                        #define S2 A2
+                        #define S3 A1
+                        #define S4 A0 
 
+                        //função executada apenas uma vez quando a placa é alimentada ou acontecer um reset
                         void setup() {
 
-                            pinMode(IN1,OUTPUT);
+                            //configura os pinos do arduino como saída
+                            pinMode(IN1,OUTPUT); //pinos que definem o sentido de rotação dos motores (IN)
                             pinMode(IN2,OUTPUT);
                             pinMode(IN3,OUTPUT);
                             pinMode(IN4,OUTPUT);
-                            pinMode(ENA,OUTPUT);
+
+                            pinMode(ENA,OUTPUT); //pinos que definem a rotação dos motores (EN)
                             pinMode(ENB,OUTPUT);
-                            analogWrite(ENA,255);
-                            analogWrite(ENB,255);
-                            
-                            pinMode(LEDR, OUTPUT);
+
+                            pinMode(LEDR, OUTPUT); //pinos que definem a cor do LED RGB
                             pinMode(LEDB, OUTPUT);
                             pinMode(LEDG, OUTPUT);
+
+                            //aciona uma onda PWM nos pinos, usada para variar a velocidade dos motores
+                            analogWrite(ENA,255); //configura os motores para rotação máxima
+                            analogWrite(ENB,255);
                             
+                            //define a taxa de transferência em bits por segundo para transmissão serial
                             Serial.begin(9600);
                         }
 
+                        //função executada em loop enquanto a placa estiver ligada
                         void loop() {
 
-                            int s1, s2, s3, s4;
+                            //definição das variáveis inteiras
+                            int s1, s2, s3, s4, light = 500;
                             
-                            s1=analogRead(S1);
-                            s2=analogRead(S2);
-                            s3=analogRead(S3);
-                            s4=analogRead(S4);
-                            
-                            int light = 500;
-                            
+                            //lê o valor dos fotorresistores analógicos e atribui às variáveis
+                            s1 = analogRead(S1);
+                            s2 = analogRead(S2);
+                            s3 = analogRead(S3);
+                            s4 = analogRead(S4);
+
+                            //imprime no serial os valores da leitura dos sensores
                             Serial.print(s1);
                             Serial.print(" ");
                             Serial.print(s2);
@@ -235,52 +244,73 @@
                             Serial.print(" ");
                             Serial.print(s4);
                             Serial.print(" ");
-                        
+
+                            //mais luz nos sensores do meio, ir para frente
                             if (s1 < light && s2 > light && s3 > light && s4 < light) {
 
-                                Serial.println("FRONT");    
-                                digitalWrite(LEDR, LOW);
+                                //imprime 'FRONT' no serial
+                                Serial.println("FRONT"); 
+
+                                //torna a cor do LED RGB verde
+                                digitalWrite(LEDR, LOW); 
                                 digitalWrite(LEDG, HIGH);
                                 digitalWrite(LEDB, LOW);
                                 
-                                digitalWrite(IN1,HIGH);
+                                //define o sentido de rotação dos motores
+                                digitalWrite(IN1,HIGH); //motor 1 gira pra frente
                                 digitalWrite(IN2,LOW);
-                                digitalWrite(IN3,LOW);
-                                digitalWrite(IN4,HIGH);
+                                digitalWrite(IN3,LOW); //motor 2 gira pra trás
+                                digitalWrite(IN4,HIGH); 
 
+                            //mais luz no sensor da direita, ir para direita
                             } else if (s1 > light && s2 < light && s3 < light && s4 < light) {
 
-                                Serial.println("RIGHT");        
-                                digitalWrite(LEDR, HIGH);
+                                //imrpime 'RIGHT' no serial
+                                Serial.println("RIGHT");         
+                                
+                                //torna a cor do LED RGB vermelha
+                                digitalWrite(LEDR, HIGH); 
                                 digitalWrite(LEDG, LOW);
                                 digitalWrite(LEDB, LOW);
                                 
-                                digitalWrite(IN1,LOW);
+                                //define o sentido de rotação dos motores
+                                digitalWrite(IN1,LOW); //motor 1 gira para trás
                                 digitalWrite(IN2,HIGH);
-                                digitalWrite(IN3,LOW);
+                                digitalWrite(IN3,LOW); //motor 2 gira para trás
                                 digitalWrite(IN4,HIGH);
 
+                            //mais luz no sensor da esquerda, ir para esquerda
                             } else if (s1 < light && s2 < light && s3 < light && s4 > light) {
+                                
+                                //imrpime 'LEFT' no serial
+                                Serial.println("LEFT"); 
 
-                                Serial.println("LEFT");
-                                digitalWrite(LEDR, HIGH);
+                                //torna a cor do LED RGB vermelha
+                                digitalWrite(LEDR, HIGH); 
                                 digitalWrite(LEDG, LOW);
                                 digitalWrite(LEDB, LOW);
-                                
-                                digitalWrite(IN1,HIGH);
+
+                                //define o sentido de rotação dos motores
+                                digitalWrite(IN1,HIGH); //motor 1 gira para frente
                                 digitalWrite(IN2,LOW);
-                                digitalWrite(IN3,HIGH);
+                                digitalWrite(IN3,HIGH); //motor 2 gira para frente
                                 digitalWrite(IN4,LOW);
 
+                            //parar
                             } else {
-                                Serial.println("STOP");
-                                digitalWrite(LEDR, LOW);
+
+                                //imprime 'STOP' no serial
+                                Serial.println("STOP"); 
+
+                                //torna a cor do LED RBG azul
+                                digitalWrite(LEDR, LOW); 
                                 digitalWrite(LEDG, LOW);
                                 digitalWrite(LEDB, HIGH);
 
-                                digitalWrite(IN1,LOW);
+                                //define o sentido de rotação dos motores
+                                digitalWrite(IN1,LOW); //motor 1 não gira
                                 digitalWrite(IN2,LOW);
-                                digitalWrite(IN3,LOW);
+                                digitalWrite(IN3,LOW); //motor 2 não gira
                                 digitalWrite(IN4,LOW);
                             }
                         }
